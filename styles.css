@@ -22,9 +22,7 @@
   --ease: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-html { 
-  /* Lenis maneja el scroll. No usar scroll-behavior: smooth; aquí */ 
-}
+html { scroll-behavior: smooth; }
 
 body {
   font-family: var(--font-b);

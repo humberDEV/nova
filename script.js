@@ -85,23 +85,7 @@
     requestAnimationFrame(step);
   }
 
-  // Smooth scroll con Lenis (Premium, buttery smooth, extra inercia)
-  const lenis = new Lenis({
-    lerp: 0.05,
-    wheelMultiplier: 1,
-    smoothWheel: true,
-    smoothTouch: false,
-    infinite: false,
-  });
-
-  function raf(time) {
-    lenis.raf(time);
-    requestAnimationFrame(raf);
-  }
-
-  requestAnimationFrame(raf);
-
-  // Anclas usando Lenis
+  // Smooth scroll nativo para anclas
   document.querySelectorAll('a[href^="#"]').forEach(function (a) {
     a.addEventListener('click', function (e) {
       var h = this.getAttribute('href');
@@ -109,7 +93,7 @@
       var t = document.querySelector(h);
       if (t) {
         e.preventDefault();
-        lenis.scrollTo(t, { offset: -nav.offsetHeight - 16 });
+        window.scrollTo({ top: t.offsetTop - nav.offsetHeight - 16, behavior: 'smooth' });
       }
     });
   });
