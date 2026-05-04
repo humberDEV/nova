@@ -820,11 +820,20 @@ a { color: inherit; text-decoration: none; }
 }
 .footer-inner a:hover { color: var(--text); }
 
+.footer-links {
+  display: flex;
+  gap: 24px;
+}
+
 @media (max-width: 480px) {
   .footer-inner {
     flex-direction: column;
-    gap: 4px;
+    gap: 8px;
     text-align: center;
+  }
+  .footer-links {
+    flex-direction: column;
+    gap: 4px;
   }
 }
 
